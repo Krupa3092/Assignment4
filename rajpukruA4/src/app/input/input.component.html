@@ -1,0 +1,23 @@
+<form [formGroup]="tipForm" (ngSubmit)="onSubmit()" class="m-10">
+    <mat-form-field>
+      <mat-label>Cost of Service</mat-label>
+      <input matInput type="number" id="cost" formControlName="cost" required>
+      <mat-error *ngIf="tipForm.get('cost')?.hasError('required')">Cost of Service is required</mat-error>
+      <mat-error *ngIf="tipForm.get('cost')?.hasError('min')">Cost of Service must be greater than or equal to 0</mat-error>
+    </mat-form-field>
+  
+    <p>Service Quality* : </p> 
+    <mat-radio-group formControlName="serviceQuality">
+      <mat-radio-button value="0.15">Okay (15%)</mat-radio-button>
+      <br/>
+      <mat-radio-button value="0.18">Good (18%)</mat-radio-button>
+      <br/>
+      <mat-radio-button value="0.20">Excellent (20%)</mat-radio-button>
+    </mat-radio-group>
+    <br/>
+    <p class="pt-1">Do you want to Round Up the Tip?</p>
+    <mat-checkbox formControlName="roundUp">Round Up Tip</mat-checkbox>
+  <br/>
+  <br/>
+    <button mat-raised-button type="submit" [disabled]="!tipForm.valid" class="btn">Calculate</button>
+  </form>

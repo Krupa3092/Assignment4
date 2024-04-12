@@ -1,0 +1,12 @@
+div{
+    border: 1px solid #ff4081;
+    padding: 30px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 33px;
+}
+h4{
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
